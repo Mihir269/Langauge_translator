@@ -1,8 +1,10 @@
 
 import streamlit as st
 import os
+from dotenv import load_dotenv
 
-os.environ["MISTRAL_API_KEY"] = "wP9nseRJl9QGDp1k2oyoFZT0iZI5ZBW7"
+load_dotenv()
+os.environ["MISTRAL_API_KEY"] = os.getenv("MISTRAL_API_KEY")
 
 from langchain.chat_models import init_chat_model
 from langchain_core.prompts import ChatPromptTemplate
